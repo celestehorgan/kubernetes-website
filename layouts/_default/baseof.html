@@ -10,7 +10,9 @@
     {{ block "announcement" . }}
       {{ if .IsHome }}
         {{ partial "frontpage-announcement.html" . }}
-      {{ not .Params.case_study_styles }}
+      {{ else if .Params.case_study_styles }}
+        <!-- do nothing? -->
+      {{ else }}
         {{ partial "announcement.html" . }}
       {{ end }}
     {{ end }}
